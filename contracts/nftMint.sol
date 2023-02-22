@@ -77,7 +77,7 @@ contract myNFT is ERC721Enumerable, Ownable {
 
     // ipfs://____ / 뒤에 슬래쉬 꼭 필요!!!
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmVPyQcLoAqTVvqtP9stNoENnztnjgQuQXyWyvaxznCD7U/";
+        return "ipfs://QmbMxuqsU4tCjBynUZsqEGw6TAmuiH5t2GDpoTduT7PjFz/";
     }
 
     //NFT 판매 가격 변경하는 함수

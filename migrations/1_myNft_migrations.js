@@ -10,6 +10,6 @@ module.exports = async function (deployer) {
     10_000_000_000_000_000n,
     15,
     15,
-    "ipfs://QmVPyQcLoAqTVvqtP9stNoENnztnjgQuQXyWyvaxznCD7U"
+    "ipfs://QmdxvFeJgTHR8GJCJDFgmm4CWAj5vTdcZJpucsnewDbjnY/0.jpg"
   );
 };
