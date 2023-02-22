@@ -59,9 +59,9 @@ function Home() {
     <HomeContainer>
       <div>Home</div>
       <WalletButton onClick={walletHandler}>CONNECT WALLET</WalletButton>
-      <div>{userAccount}</div>
-      <div>Trip|Ez member를 위한 NFT 입니다.</div>
-      <div>민팅 가격은 0.01 goerli 입니다.</div>
+      <Account>account : {userAccount}</Account>
+      <Description>Trip|Ez member를 위한 NFT 입니다.</Description>
+      <Description>민팅 가격은 0.01 goerli 입니다.</Description>
       <LoadingSection>{Loading ? "PENDING..." : null}</LoadingSection>
       <MintButton
         onClick={(e) => {
@@ -71,7 +71,7 @@ function Home() {
       >
         mint Button
       </MintButton>
-      {myNft && <div>{myNft._address}</div>}
+      {myNft && <Address>contract address : {myNft._address}</Address>}
     </HomeContainer>
   );
 }
@@ -92,9 +92,20 @@ const WalletButton = styled.button`
   background-color: #48617c;
   cursor: pointer;
 `;
+const Description = styled.div`
+  margin-bottom: 5px;
+`;
 const MintButton = styled(WalletButton)`
   color: white;
   background-color: hotpink;
+`;
+const Account = styled.div`
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+`;
+const Address = styled(Account)`
+  margin-top: 20px;
 `;
 const LoadingAnimation = keyframes`
   from {
