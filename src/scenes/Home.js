@@ -63,14 +63,19 @@ function Home() {
       <Description>Trip|Ez member를 위한 NFT 입니다.</Description>
       <Description>민팅 가격은 0.01 goerli 입니다.</Description>
       <LoadingSection>{Loading ? "PENDING..." : null}</LoadingSection>
-      <MintButton
-        onClick={(e) => {
-          minting();
-          setLoading(true);
-        }}
-      >
-        mint Button
-      </MintButton>
+      {userAccount ? (
+        <MintButton
+          onClick={(e) => {
+            minting();
+            setLoading(true);
+          }}
+        >
+          mint Button
+        </MintButton>
+      ) : (
+        <MintButtonDeactive>mint Button</MintButtonDeactive>
+      )}
+
       {myNft && <Address>contract address : {myNft._address}</Address>}
     </HomeContainer>
   );
@@ -98,6 +103,9 @@ const Description = styled.div`
 const MintButton = styled(WalletButton)`
   color: white;
   background-color: hotpink;
+`;
+const MintButtonDeactive = styled(MintButton)`
+  background-color: darkgray;
 `;
 const Account = styled.div`
   font-size: 12px;
